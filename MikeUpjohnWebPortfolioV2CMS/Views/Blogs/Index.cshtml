@@ -1,0 +1,75 @@
+﻿@model List<MikeUpjohnWebPortfolioV2CMS.Models.BlogListViewModel>
+@{
+    ViewBag.Title = "Blog List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-xs-12">
+        <div class="content-area">
+            <div class="left-title">
+                <h1>Blogs</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <div class="content-area">
+            <div class="right-title">
+                <h2><a href="@Url.Action("Edit","Blogs")">Add a New Blog</a></h2>
+            </div>
+        </div>
+    </div>
+</div>
+@if (Model.Count() > 0)
+{
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="content-area">
+                <table class="blogs-table">
+                    <tr>
+                        <th>ID</th>
+                        <th>Blog Title</th>
+                        <th>Blog Date</th>
+                        <th>Enabled?</th>
+                        <th>Deleted?</th>
+                        <th>Last Modified</th>
+                        <th>Actions</th>
+                    </tr>
+                    @foreach (var item in Model)
+                {
+                        <tr>
+                            <td class="table-center">@item.BlogID</td>
+                            <td>@item.BlogTitle</td>
+                            <td class="table-center">@item.BlogDate.ToFormattedDateString("ddd, dd MMM yyyy")</td>
+                            <td class="table-center">
+                                @if (item.IsDisabled)
+                                {
+                                    <text>&#10004;</text>
+                                }
+                            </td>
+                            <td class="table-center">
+                                @if (item.IsDeleted)
+                                {
+                                    <text>&#10004;</text>
+                                }
+                            </td>
+                            <td class="table-center">@item.BlogModifiedDate.ToFormattedDateString("dd/MM/yyyy HH:mm")</td>
+                            <td class="table-center actions">
+                                @if (!item.IsDeleted)
+                                {
+                                    <a href="@Url.Action("Edit", "Blogs", new { @id = item.HashedBlogID })">Edit</a> @("|") <a class="delete-blog" data-blog-id="@item.HashedBlogID">Delete</a>
+                                }
+                            </td>
+                        </tr>
+                    }
+                </table>
+            </div>
+        </div>
+    </div>
+    if (ViewBag.CountOfItems > 10)
+    {
+        @Html.Action("_Pagination", "Shared", new { currentPage = ViewBag.CurrentPage, countOfItems = ViewBag.CountOfItems })
+    }
+}

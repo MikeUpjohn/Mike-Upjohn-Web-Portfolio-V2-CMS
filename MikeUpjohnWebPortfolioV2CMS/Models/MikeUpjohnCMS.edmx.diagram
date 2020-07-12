@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="89e31265a05e46129810a880969c377b" Name="Diagram1" ZoomLevel="74">
+        <EntityTypeShape EntityType="MikeUpjohnCMSModel.AspNetRole" Width="1.5" PointX="0.75" PointY="8" />
+        <EntityTypeShape EntityType="MikeUpjohnCMSModel.AspNetUserClaim" Width="1.5" PointX="5.25" PointY="13.375" />
+        <EntityTypeShape EntityType="MikeUpjohnCMSModel.AspNetUserLogin" Width="1.5" PointX="5.25" PointY="16.125" />
+        <EntityTypeShape EntityType="MikeUpjohnCMSModel.AspNetUser" Width="1.5" PointX="3" PointY="6.5" />
+        <EntityTypeShape EntityType="MikeUpjohnCMSModel.Blog" Width="1.5" PointX="10.5" PointY="5.625" />
+        <EntityTypeShape EntityType="MikeUpjohnCMSModel.Image" Width="1.5" PointX="5.25" PointY="4.5" />
+        <EntityTypeShape EntityType="MikeUpjohnCMSModel.Project" Width="1.5" PointX="7.5" PointY="5.625" />
+        <AssociationConnector Association="MikeUpjohnCMSModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="MikeUpjohnCMSModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="MikeUpjohnCMSModel.FK_Blog_AspNetUsers" />
+        <AssociationConnector Association="MikeUpjohnCMSModel.FK_Image_AspNetUsers" />
+        <AssociationConnector Association="MikeUpjohnCMSModel.FK_Project_AspNetUsers" />
+        <AssociationConnector Association="MikeUpjohnCMSModel.FK_Blog_Image" />
+        <AssociationConnector Association="MikeUpjohnCMSModel.FK_Blog_Image1" />
+        <AssociationConnector Association="MikeUpjohnCMSModel.FK_Project_Image" />
+        <AssociationConnector Association="MikeUpjohnCMSModel.FK_Project_Image1" />
+        <AssociationConnector Association="MikeUpjohnCMSModel.AspNetUserRoles" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

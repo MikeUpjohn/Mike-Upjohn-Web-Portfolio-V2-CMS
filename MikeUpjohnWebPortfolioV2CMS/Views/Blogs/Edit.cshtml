@@ -1,0 +1,128 @@
+﻿@model MikeUpjohnWebPortfolioV2CMS.Models.BlogViewModel
+@{
+    ViewBag.Title = (ViewBag.IsNewBlog ? "Add New Blog" : "Edit Blog");
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row">
+    <div class="col-xs-12">
+        <div class="content-area">
+            <div class="left-title">
+                <h1>@(ViewBag.IsNewBlog ? "Add New" : "Edit") Blog</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <div class="content-area">
+            @using (Html.BeginForm("Edit", "Blogs", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                <div class="col-xs-12">
+                    <div class="form-component">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 form-label">
+                                <label>Blog Title: </label>
+                                <span class="validation-asterisk">*</span>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+                                @Html.TextBoxFor(m => m.BlogTitle)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-component">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 form-label">
+                                <label>Blog Author: </label>
+                                <span class="validation-asterisk">*</span>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+                                @Html.TextBoxFor(m => m.BlogAuthor)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-component">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 form-label">
+                                <label>Blog Date: </label>
+                                <span class="validation-asterisk">*</span>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+                                @Html.TextBoxFor(m => m.BlogDate, "{0:dd/MM/yyyy}")
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-component">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 form-label">
+                                <label>Blog Summary: </label>
+                                <span class="validation-asterisk">*</span>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+                                @Html.TextAreaFor(m => m.BlogSummary, new { @id = "blog-summary" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-component">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 form-label">
+                                <label>Blog Post: </label>
+                                <span class="validation-asterisk">*</span>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+                                @Html.TextAreaFor(m => m.BlogPost, new { @id = "blog-post" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-component">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 form-label">
+                                <label>Main Image: </label>
+                                <span class="validation-asterisk">*</span>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+                                @Html.DropDownListFor(m => m.SelectedBlogImageID, Model.BlogImages)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-component">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 form-label">
+                                <label>Thumbnail Image: </label>
+                                <span class="validation-asterisk">*</span>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+                                @Html.DropDownListFor(m => m.SelectedThumbnailImageID, Model.BlogThumbnailImages)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-component">
+                        <div class="row">
+                            <div class="col-xs-12 center-item">
+                                <label>
+                                    @Html.CheckBoxFor(m => m.IsDisabled)
+                                    <span>Disable this Blog Post</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-component">
+                        <div class="row">
+                            <div class="col-xs-12 center-item">
+                                <input type="submit" value="@(ViewBag.IsNewBlog == true ? "Add Blog" : "Save Blog")">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @Html.HiddenFor(m=>m.HashedBlogID)
+            }
+        </div>
+    </div>
+</div>
+@section scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            CKEDITOR.replace("blog-summary", { language: 'en' });
+            CKEDITOR.replace("blog-post", { language: 'en' });
+        });
+    </script>
+}

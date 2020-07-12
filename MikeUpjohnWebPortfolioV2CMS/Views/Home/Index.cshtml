@@ -1,0 +1,37 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<div class="row">
+    <div class="col-xs-12">
+        <div class="content-area">
+            <div class="main-title">
+                <h1>Welcome to the CMS</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="content-area">
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+            <div class="home-link-item first-item">
+                <h2>Images</h2>
+                <p>Manange your images for blog posts and projects here.</p>
+                <a href="@Url.Action("Index","Images")" class="view-details">View</a>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+            <div class="home-link-item">
+                <h2>Blogs</h2>
+                <p>Manange your blog posts here.</p>
+                <a href="@Url.Action("Index","Blogs")" class="view-details">View</a>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+            <div class="home-link-item last-item">
+                <h2>Projects</h2>
+                <p>Manange your projects here.</p>
+                <a href="@Url.Action("Index","Projects")" class="view-details">View</a>
+            </div>
+        </div>
+    </div>
+</div>

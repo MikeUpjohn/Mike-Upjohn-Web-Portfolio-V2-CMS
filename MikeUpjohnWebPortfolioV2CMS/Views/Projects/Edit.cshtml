@@ -1,0 +1,160 @@
+﻿@model MikeUpjohnWebPortfolioV2CMS.Models.ProjectViewModel
+@{
+    ViewBag.Title = (ViewBag.IsNewProject ? "Add New Project" : "Edit Project");
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row">
+    <div class="col-xs-12">
+        <div class="content-area">
+            <div class="left-title">
+                <h1>@((bool)ViewBag.IsNewProject ? "Add New" : "Edit") Project</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <div class="content-area">
+            @using (Html.BeginForm("Edit", "Projects", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                <div class="col-xs-12">
+                <div class="form-component">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 form-label">
+                            <label>Project Title: </label>
+                            <span class="validation-asterisk">*</span>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+                            @*<input type="text" placeholder="Blog Title" />*@
+                            @Html.TextBoxFor(m => m.ProjectTitle)
+                        </div>
+                    </div>
+                </div>
+                <div class="form-component">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 form-label">
+                            <label>Project Date Description: </label>
+                            <span class="validation-asterisk">*</span>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+                            @*<input type="text" placeholder="Blog Author" />*@
+                            @Html.TextBoxFor(m => m.ProjectDateDescription)
+                        </div>
+                    </div>
+                </div>
+                <div class="form-component">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 form-label">
+                            <label>Project Post Date: </label>
+                            <span class="validation-asterisk">*</span>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+                            @*<input type="text" placeholder="Blog Date" />*@
+                            @Html.TextBoxFor(m => m.ProjectPostDate, "{0:dd/MM/yyyy}")
+                        </div>
+                    </div>
+                </div>
+                <div class="form-component">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 form-label">
+                            <label>Project Summary: </label>
+                            <span class="validation-asterisk">*</span>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+                            @*<input type="text" placeholder="Blog Summary" id="blog-summary" />*@
+                            @Html.TextAreaFor(m => m.ProjectSummary, new { @id = "project-summary" })
+                        </div>
+                    </div>
+                </div>
+                <div class="form-component">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 form-label">
+                            <label>Project Description: </label>
+                            <span class="validation-asterisk">*</span>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+                            @*<input type="text" placeholder="Blog Post" id="blog-post" />*@
+                            @Html.TextAreaFor(m => m.ProjectDescription, new { @id = "project-description" })
+                        </div>
+                    </div>
+                </div>
+                <div class="form-component">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 form-label">
+                            <label>Project Link: </label>
+                            <span class="validation-asterisk">*</span>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+                            @*<input type="text" placeholder="Blog Date" />*@
+                            @Html.TextBoxFor(m => m.ProjectLink)
+                        </div>
+                    </div>
+                </div>
+                <div class="form-component">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 form-label">
+                            <label>Main Image: </label>
+                            <span class="validation-asterisk">*</span>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+                            @*<select>
+                                    <option selected="selected" disabled="disabled">Choose a Blog Image</option>
+                                    <option>image-1.jpg</option>
+                                    <option>image-2.jpg</option>
+                                    <option>image-3.jpg</option>
+                                    <option>image-4.jpg</option>
+                                </select>*@
+                            @Html.DropDownListFor(m => m.SelectedProjectImageID, Model.ProjectImages)
+                        </div>
+                    </div>
+                </div>
+                <div class="form-component">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 form-label">
+                            <label>Thumbnail Image: </label>
+                            <span class="validation-asterisk">*</span>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+                            @*<select>
+                                    <option selected="selected" disabled="disabled">Choose a Blog Thumbnail Image</option>
+                                    <option>thumbnail-image-1.jpg</option>
+                                    <option>thumbnail-image-2.jpg</option>
+                                    <option>thumbnail-image-3.jpg</option>
+                                    <option>thumbnail-image-4.jpg</option>
+                                </select>*@
+                            @Html.DropDownListFor(m => m.SelectedThumbnailImageID, Model.ProjectThumbnailImages)
+                        </div>
+                    </div>
+                </div>
+                <div class="form-component">
+                    <div class="row">
+                        <div class="col-xs-12 center-item">
+                            <label>
+                                @*<input type="checkbox">*@
+                                @Html.CheckBoxFor(m => m.IsDisabled)
+                                <span>Disable this Blog Post</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-component">
+                    <div class="row">
+                        <div class="col-xs-12 center-item">
+                            <input type="submit" value="@((bool)ViewBag.IsNewProject ? "Add Project" : "Save Project")">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @Html.HiddenFor(m=>m.HashedProjectID)
+            }
+        </div>
+    </div>
+    </div>
+    @section scripts {
+        <script type="text/javascript">
+            $(document).ready(function () {
+                CKEDITOR.replace("project-summary", { language: 'en' });
+                CKEDITOR.replace("project-description", { language: 'en' });
+            });
+        </script>
+    }

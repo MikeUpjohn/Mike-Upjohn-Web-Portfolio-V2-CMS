@@ -1,0 +1,345 @@
+@font-face {
+	font-family: "Segoe UI Semibold";
+	src: url('../../_includes/fonts/SegoeUISemibold.ttf');
+}
+
+@font-face {
+	font-family: "Segoe UI SemiLight";
+	src: url('../../_includes/fonts/SegoeUISemiLight.ttf');
+}
+
+@font-face {
+	font-family: "Segoe UI Black";
+	src: url('../../_includes/fonts/SegoeUIBlack.ttf');
+}
+
+body, .navbar-default {
+	background-color: #E7E7E7;
+}
+
+h1, h2, p, a {
+	font-family: "Gill Sans MT", "Arial", sans-serif;
+}
+
+h1 {
+	font-size: 4.0em;
+}
+
+a {
+    background-color:transparent;
+}
+
+#main {
+	position: absolute;
+	width:100%
+}
+
+.navbar-nav {
+	float:right;
+	font-size:1.6em;
+}
+
+.container-fluid {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.content-area {
+	max-width:65%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.content-area table {
+	width:100%;
+
+}
+
+.content-area table th, .content-area table td {
+	border:1px solid #000000;
+	padding:10px 10px 10px 10px;
+	font-family: "Segoe UI SemiLight", "Arial", sans-serif;
+	font-size:1.2em;
+}
+
+.content-area table td a {
+	font-family: "Segoe UI SemiLight", "Arial", sans-serif;
+	font-weight: bold;
+	color:#333333;
+}
+
+.content-area table th {
+	font-weight: bold;
+	text-align: center;
+}
+
+table .table-center {
+	text-align: center;
+}
+
+.blogs table td.actions {
+	background-color: #C07F28;
+}
+
+.blogs .content-area table th {
+	background-color: #E0CC6D;
+}
+
+.images table td.actions {
+	background-color: #3156E7;
+}
+
+.images .content-area table th {
+	background-color: #6D7CE0;
+}
+
+.projects table td.actions {
+	background-color: #28C04A;
+}
+
+.projects .content-area table th {
+	background-color: #6DE086;
+}
+
+.accounts form {
+	margin-top:150px;
+}
+
+.main-title {
+	text-align: center;
+	font-weight: bold;
+}
+
+.left-title {
+	text-align: left;
+}
+
+.right-title {
+	text-align: right;
+}
+
+.right-title h2 {
+	font-weight:bold;
+}
+
+.right-title h2 a {
+	color:#333333;
+}
+
+.right-title h2 a:hover {
+	text-decoration: none;
+}
+
+.home-link-item {
+	border:1px solid #000000;
+	margin:2.0em 2.0em 2.0em 2.0em;
+	min-height:300px;
+	background-color: #1F3DA8;
+	padding:20px 20px 20px 20px;
+}
+
+.home-link-item h2, .home-link-item p {
+	background-color: #1F3DA8;
+	text-align: center;
+	color:#FFFFFF;
+}
+
+.home-link-item h2 {
+	font-size:2.5em;
+}
+
+.home-link-item p {
+	font-family: "Segoe UI SemiLight", "Arial", sans-serif;
+	font-size:1.5em;
+	font-weight: normal;
+}
+
+.view-details {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	padding:20px 20px 20px 20px;
+	background-color: #3156E7;
+	color:#000000;
+	width:50%;
+	font-size:1.5em;
+	min-width:100px;
+}
+
+.view-details:hover {
+	color:#FFFFFF;
+	text-decoration: none;
+}
+
+/* Generic Pagination */
+.pagination {
+	width:100%;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+
+.pagination ul {
+	list-style-type: none;
+	text-align: center;
+	padding-left:0px;
+}
+
+.pagination ul li {
+	display: inline-block;
+	width:50px;
+	height:50px;
+	margin-bottom:10px;
+}
+
+.pagination ul li a {
+	color: #000000;
+	display: block;
+	padding-top:10px;
+	font-family:"Segoe UI Black","Arial", sans-serif;
+	font-size:2.0em;
+}
+
+/* End Pagination */
+
+.form-component {
+	font-family: "Segoe UI SemiLight";
+	margin:5px 5px 5px 5px;
+}
+
+.form-component .form-label{
+	text-align: right;
+	padding: 10px 10px 10px 10px;
+}
+
+.form-component .form-label.left{
+	text-align: left;
+	padding: 10px 10px 10px 10px;
+}
+
+.rte-small {
+	height:1000px;
+}
+
+.form-component input[type='text'], .form-component input[type='password'], select, option {
+	border:1px solid #000000;
+	padding: 10px 10px 10px 10px;
+	width:100%;
+}
+
+.form-component input[type='checkbox'] {
+	width:25px;
+	height:25px;
+	margin:10px 10px 10px 10px;
+}
+
+.form-component input[type='file'] {
+	width: 100%;
+	padding: 10px 10px 10px 10px;
+}
+
+.form-component input[type='submit'] {
+	font-family: "Segoe UI Black","Arial", sans-serif;
+	color:#000000;
+	font-size:2.0em;
+	padding:20px 20px 20px 20px;
+}
+
+.blogs .form-component input[type='text'], .blogs .form-component input[type='file'], .blogs .form-component select, .blogs .form-component option {
+	background-color: #E0CC6D;
+	border:1px solid #000000;
+}
+
+.blogs .form-component input[type='submit'] {
+	background-color: #C07F28;
+}
+
+.images .form-component input[type='text'], .images .form-component input[type='file'], .images .form-component select, .images .form-component option {
+	background-color: #6D7CE0;
+	border:1px solid #000000;
+}
+
+.images .form-component input[type='submit'] {
+	background-color: #3156E7;
+}
+
+.projects .form-component input[type='text'], .projects .form-component input[type='file'], .projects .form-component select, .projects .form-component option {
+	background-color: #6DE086;
+	border:1px solid #000000;
+}
+
+.projects .form-component input[type='submit'] {
+	background-color: #28C04A;
+}
+
+.accounts .form-component input[type='text'], .accounts .form-component input[type='password'], .accounts .form-component input[type='file'], .accounts .form-component select, .accounts .form-component option {
+	background-color: #6D7CE0;
+	border:1px solid #000000;
+}
+
+.accounts .form-component input[type='submit'] {
+	background-color: #3156E7;
+}
+
+.form-component .center-item {
+	text-align: center;
+}
+
+.form-component .center-item span {
+	position: relative;
+	bottom: 7px;
+}
+
+footer {
+	text-align: right;
+	padding:20px 40px 20px 20px;
+	font-family: "Gill Sans MT", "Arial", sans-serif;
+}
+
+/* Mobile navigation */
+#menu {
+	background-color:#E7E7E7;
+	width:260px;
+}
+
+#menu ul {
+	list-style-type: none;
+	padding:0px;
+}
+
+#menu ul li {
+	font-size:1.4em;
+	border:1px solid #000000;
+	padding:5px 5px 5px 5px;
+	background-color: #97989A;
+}
+
+#menu ul li, #menu ul li a {
+	font-family: "Segoe UI Light", "Arial", sans-serif;
+	color:#000000;
+
+	margin:0px;
+}
+
+#menu ul li.brand {
+	font-family: Agenda, "Arial", sans-serif;
+	font-weight:bold;
+}
+
+#menu ul li.brand .brand-header{
+	display: block;
+	font-size:1.5em;
+}
+
+#menu ul li.brand .brand-tagline{
+	font-size:1.0em;
+	font-weight: normal;
+}
+/* End Mobile Navigation */
+
+@media(max-width:992px) {
+	.form-component .form-label{
+		text-align: left;
+	}
+}
